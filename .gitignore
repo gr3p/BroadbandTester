@@ -1,0 +1,25 @@
+# Logs and test output
+logs/
+*.log
+
+# Ookla Speedtest CLI (must be downloaded separately due to licensing)
+speedtest.exe
+speedtest
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.user
+
+# Temporary files
+*.tmp
+*.temp
+*~
