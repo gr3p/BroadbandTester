@@ -1,6 +1,6 @@
 # Internet Speed Tester (Broadband Tester)
 
-Very Lightweight automated broadband diagnostics: multi-server speed tests, latency checks, packet loss detection, and route tracing, all from a single PowerShell script.
+Very Lightweight automated broadband diagnostics: multi-server speed tests, latency checks, packet loss detection, and route tracing. All from a single PowerShell script.
 
 ## Requirements
 
