@@ -1,4 +1,4 @@
-# InternetSpeedTester
+# Internet Speed Tester (Broadband Tester)
 
 PowerShell-svit som automatiserar bredbandsmätningar med Ooklas Speedtest CLI, ping och traceroute, inklusive schemaläggning och loggning.
 
