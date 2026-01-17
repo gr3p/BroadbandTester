@@ -1,6 +1,6 @@
 # Internet Speed Tester (Broadband Tester)
 
-A PowerShell suite that automates broadband measurements using Ookla’s Speedtest CLI, ping, and traceroute — including scheduling and logging.
+Very Lightweight automated broadband diagnostics: multi-server speed tests, latency checks, packet loss detection, and route tracing — all from a single PowerShell script.
 
 ## Requirements
 
