@@ -1,57 +1,57 @@
 # Internet Speed Tester (Broadband Tester)
 
-PowerShell-svit som automatiserar bredbandsmätningar med Ooklas Speedtest CLI, ping och traceroute, inklusive schemaläggning och loggning.
+A PowerShell suite that automates broadband measurements using Ookla’s Speedtest CLI, ping, and traceroute — including scheduling and logging.
 
-## Krav
+## Requirements
 
-- **Windows** med PowerShell 5.1+ eller PowerShell Core 7+
-- **Ookla Speedtest CLI** - laddas ner automatiskt vid första körning (eller manuellt från [speedtest.net/apps/cli](https://www.speedtest.net/apps/cli))
+- **Windows** with PowerShell 5.1+ or PowerShell Core 7+
+- **Ookla Speedtest CLI** - downloaded automatically on first run (or manually from [speedtest.net/apps/cli](https://www.speedtest.net/apps/cli))
 
 ## Installation
 
-1. Klona repot eller ladda ner filerna
-2. Kör `.\BroadbandTester.ps1` - speedtest.exe laddas ner automatiskt om den saknas
-3. Acceptera Ookla's licensavtal vid första körning
+1. Clone the repo or download the files
+2. Run `.\BroadbandTester.ps1` - `speedtest.exe` is downloaded automatically if missing
+3. Accept Ookla’s license agreement on first run
 
-## Arkitektur
+## Architecture
 
-- `BroadbandTester.ps1` - Huvudskriptet som kör hastighetstester mot flera servrar, pingar gateway/DNS, och kör traceroute
-- `RunSpeedTests.ps1` - Wrapper för schemalagda/upprepade tester baserat på `script.config`
-- `script.config` - Konfigurationsfil för intervall och varaktighet
-- `logs/` - Genereras automatiskt med testresultat
+- `BroadbandTester.ps1` - Main script that runs speed tests against multiple servers, pings gateway/DNS, and runs traceroute
+- `RunSpeedTests.ps1` - Wrapper for scheduled/repeated tests based on `script.config`
+- `script.config` - Configuration file for interval and duration
+- `logs/` - Auto-generated with test results
 
-## Konfiguration
+## Configuration
 
-Redigera `script.config`:
+Edit `script.config`:
 
 ```ini
-RepeatMinutes=60      # Kör var 60:e minut (0 = kör en gång)
-DurationHours=24      # Kör i 24 timmar (0 = ingen gräns)
-Args=-PingCount 10    # Extra argument till BroadbandTester.ps1
+RepeatMinutes=60      # Run every 60 minutes (0 = run once)
+DurationHours=24      # Run for 24 hours (0 = no limit)
+Args=-PingCount 10    # Extra arguments to BroadbandTester.ps1
 ```
 
-## Användning
+## Usage
 
 ```powershell
-# Enstaka test
+# Single test
 .\BroadbandTester.ps1
 
-# Med färre ping-paket (snabbare)
+# With fewer ping packets (faster)
 .\BroadbandTester.ps1 -PingCount 5
 
-# Schemalagda tester enligt config
+# Scheduled tests according to config
 .\RunSpeedTests.ps1
 ```
 
 ## Output
 
-Testet visar:
-- Hastighet (download/upload i Mbps)
-- Latens (ping, jitter)
-- Paketförlust
-- Traceroute med hop-detaljer
-- Färgkodad sammanfattning med betyg A-D
+The test displays:
+- Speed (download/upload in Mbps)
+- Latency (ping, jitter)
+- Packet loss
+- Traceroute with hop details
+- Color-coded summary with grade A–D
 
-## Licens
+## License
 
-MIT License - se [LICENSE](LICENSE)
+MIT License - see [LICENSE](LICENSE)
